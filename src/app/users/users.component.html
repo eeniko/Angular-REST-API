@@ -1,0 +1,67 @@
+<section class="user-list" *ngIf="responseUsers">
+  <div class="container">
+    <ul class="row">
+      <li
+        class="col-3 shadow-sm p-3 mb-5 bg-white rounded"
+        *ngFor="let user of responseUsers.data"
+       
+      >
+        <div class="user" style="height: 320px">
+          <img src="{{ user.avatar }}" class="img-responsive" alt="avatar" />
+
+          <h5>
+            <a [routerLink]="['users/update/', user.id]"
+              >{{ user.first_name }} {{ user.last_name }}</a
+            >
+          </h5>
+          <p>{{ user.email }}</p>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            type="button"
+            value="{{ user.id }}"
+            (click)="deleteById($event)"
+          >
+            Delete user data
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="form-group row">
+  <div class="col-3"></div>
+  <div class="col-2">
+    <label for="per_page"> users per page </label>
+    <select
+      class="form-control"
+      name="per_page"
+      id="per_page"
+      [(ngModel)]="per_page"
+      (change)="perpageOnChange($event)"
+      style="width: 80px"
+    >
+      <option value="3">3</option>
+      <option value="6">6</option>
+      <option value="12">12</option>
+    </select>
+  </div>
+
+  <div class="col-6 row">
+    <ul>
+      <li *ngFor="let pnumber of pageNumbers" style="border: 5px; float: left">
+        <button
+          type="button"
+          class="btn btn-link"
+          type="button"
+          value="{{ pnumber }}"
+          (click)="pageButtonClick($event)"
+        >
+          {{ pnumber }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="col-1"></div>
+</div>

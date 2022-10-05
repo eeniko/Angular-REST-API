@@ -1,0 +1,58 @@
+
+
+
+<section class="user-list padding-lg text-center">
+  <div class="col-8 container shadow-sm bg-white rounded" *ngIf="request">
+    <div>
+      <div class="col-12" style="height: 400px">
+        <H4> User data update </H4>
+        <div class="form-group">
+          <label for="first_name"> First name</label>
+
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            class="form-control input-lg"
+            [(ngModel)]="request.first_name"
+          />
+        </div>
+        <div class="form-group">
+          <div class="form-group">
+            <label for="last_name"> Last name</label>
+            <input
+              type="text"
+              name="last_name"
+              id="last_name"
+              class="form-control input-lg"
+              [(ngModel)]="request.last_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control input-lg"
+              [(ngModel)]="request.email"
+            />
+          </div>
+        </div>
+        <div>
+            <br/>
+          <button
+            class="btn btn-lg btn-outline-primary"
+            value="Register"
+            (click)="update()"
+          >
+            Update user
+          </button>
+          <button class="btn btn-lg btn-outline-danger" (click)="delete()">
+            Delete user data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

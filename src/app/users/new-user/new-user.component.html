@@ -1,0 +1,52 @@
+<section class="user-list padding-lg text-center">
+  <div class="container col-8 shadow-sm bg-white rounded">
+    <div class="row">
+      <div class="col-12 col-md-12" style="height: 400px">
+        <H4>You can create new user here </H4>
+        <div class="form-group">
+          <label for="first_name"> First name</label>
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First name"
+            id="first_name"
+            class="form-control input-lg"
+           [(ngModel)]="request.first_name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="last_name"> Last name</label>
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            class="form-control input-lg"
+            placeholder="Last name"
+            [(ngModel)]="request.last_name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email"> Email </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control input-lg"
+            placeholder="Email"
+            [(ngModel)]="request.email"
+          />
+        </div>
+        <div>
+          <br>
+          <br>
+          <button
+            class="btn btn-lg btn-outline-primary"
+                      (click)="save()"
+                    > Save user data
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
