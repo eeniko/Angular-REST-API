@@ -2,11 +2,10 @@
   <div class="container">
     <ul class="row">
       <li
-        class="col-3 shadow-sm p-3 mb-5 bg-white rounded"
+        class="col-3 shadow p-3 mb-5 bg-white"
         *ngFor="let user of responseUsers.data"
-       
       >
-        <div class="user" style="height: 320px">
+        <div class="user" style="height: 260px">
           <img src="{{ user.avatar }}" class="img-responsive" alt="avatar" />
 
           <h5>
@@ -31,8 +30,8 @@
 </section>
 
 <div class="form-group row">
-  <div class="col-3"></div>
-  <div class="col-2">
+  <div class="col-2"></div>
+  <div class="col-3">
     <label for="per_page"> users per page </label>
     <select
       class="form-control"

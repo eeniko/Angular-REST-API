@@ -1,8 +1,9 @@
-<section class="user-list padding-lg text-center">
-  <div class="container col-8 shadow-sm bg-white rounded">
+<section class="padding-lg text-center">
+  <div class="container col-6 shadow bg-white">
     <div class="row">
-      <div class="col-12 col-md-12" style="height: 400px">
+      <div class="col-12 col-md-12" style="height: 410px; padding-bottom: 10px">
         <H4>You can create new user here </H4>
+        <br />
         <div class="form-group">
           <label for="first_name"> First name</label>
           <input
@@ -11,9 +12,10 @@
             placeholder="First name"
             id="first_name"
             class="form-control input-lg"
-           [(ngModel)]="request.first_name"
+            [(ngModel)]="request.first_name"
           />
         </div>
+        <br />
         <div class="form-group">
           <label for="last_name"> Last name</label>
           <input
@@ -25,6 +27,7 @@
             [(ngModel)]="request.last_name"
           />
         </div>
+        <br />
         <div class="form-group">
           <label for="email"> Email </label>
           <input
@@ -37,16 +40,16 @@
           />
         </div>
         <div>
-          <br>
-          <br>
-          <button
-            class="btn btn-lg btn-outline-primary"
-                      (click)="save()"
-                    > Save user data
+          <br />
+          <br />
+          <button class="btn btn-lg btn-outline-primary" (click)="save()">
+            Save user data
+          </button>
+          <button class="btn btn-outline-secondary btn-lg" routerLink="/">
+            Close
           </button>
         </div>
       </div>
-      
     </div>
   </div>
 </section>
